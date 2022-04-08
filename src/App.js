@@ -4,7 +4,6 @@ const usePrevious = (current) => {
   const previous = useRef(current);
 
   useEffect(() => {
-    console.log(previous);
     previous.current = current;
   }, [current]);
 
@@ -15,8 +14,8 @@ const App = () => {
   const [current, setCurrent] = useState(0);
   const previous = usePrevious(current);
 
-  // console.log("----CURRENT-----", current);
-  // console.log("----PREVIOUS-----", previous);
+  console.log("----CURRENT-----", current);
+  console.log("----PREVIOUS-----", previous);
   const handler = () => {
     setCurrent((c) => c + 1);
   };
