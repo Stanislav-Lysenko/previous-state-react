@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
 const usePrevious = (current) => {
-  const previous = useRef(current);
+  const previous = useRef(current); //1
 
   useEffect(() => {
-    previous.current = current;
+    previous.current = current; //3
   }, [current]);
 
-  return previous.current;
+  return previous.current; //2
 };
 
 const App = () => {
